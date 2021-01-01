@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>Casty.in - Podcast search</title>
+<style>
+    body {
+        font-size: 13px;
+    }
+
+    .page {
+        padding-top: 20vh;
+        text-align: center;
+        padding-bottom: 20px;
+        margin-bottom: 25vh;
+    }
+
+    .logo {
+        padding-bottom: 15px;
+    }
+
+    .search {
+        width: 45vw;
+        padding: 8px;
+        border: 1px solid #d9d9d9;
+        border-radius: 25px;
+    }
+
+    .search:hover {
+        border: 1px solid #b9b9b9;
+        border-top-color: #a0a0a0;
+    }
+
+    .search:focus {
+        outline: none;
+        border: 1px solid #4d90fe;
+    }
+
+    .Bcontainer {
+        text-align: center;
+        margin: 0 auto;
+        width: 270px;
+        padding-top: 20px;
+    }
+
+    .button {
+        display: inline-block;
+        background: #f2f2f2;
+        padding: 8px 12px;
+        font-weight: 700;
+        font-size: 13px;
+        border: 1px solid #f2f2f2;
+        border-radius: 2px;
+        color: #757575;
+        font-family: arial, sans-serif;
+        border-radius: 5px;
+    }
+
+    .button:hover {
+        border: 1px solid #c6c6c6;
+        color: #222;
+        cursor: default;
+    }
+
+    footer{
+        text-align: center;
+        bottom: 0;
+    }
+    footer>p{
+        height: auto;
+    }
+
+    /* Snackbar */
+    #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+    }
+
+    #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+    }
+
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+    }
+
+    @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+    }
+
+    @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }
+</style>
+<script>
+    function showsnackbar() {
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <img class="logo" src="logo.png" alt="Casty.in - Podcast search">
+        <br><input id="searchme" class="search" title="Search" type="text" placeholder="ex: touching story, startup, music, live..."><br>
+        <div class="Bcontainer">
+            <div class="button" onclick="showsnackbar()">Podcast Search</div>
+        </div>
+    </div>
+    <div id="snackbar">Oops, Coming soon.</div>
+    <footer>
+        <p>Copyright © 2021 Casty.in. All Rights Reserved</p>
+    </footer>
+</body>
+</html>
